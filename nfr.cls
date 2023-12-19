@@ -28,13 +28,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-
-% Abstract
-\RequirePackage[linewidth=1pt]{mdframed}
-\renewenvironment{abstract}{\mdframed}{\endmdframed
-\iferc@BOne \newpage\fi
-}
-
 % Hyperlinks and TOC for PDF
 \RequirePackage{hyperref}
 \hypersetup{
