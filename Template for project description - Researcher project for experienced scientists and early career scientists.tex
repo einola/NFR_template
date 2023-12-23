@@ -1,5 +1,15 @@
 \documentclass{nfr}
 
+% The bibliography can use a 9pt font, which equates to \footnotesize. If you
+% use the biblatex or natbib packages you can do
+% '\renewcommand{\bibfont}{\footnotesize}' to achieve this. Here's an example
+% using biblatex.
+
+\usepackage[style=numeric,sorting=ynt]{biblatex}
+
+\renewcommand{\bibfont}{\footnotesize}
+\addbibresource{refs.bib}
+
 \title{Project title}
 
 \begin{document}
@@ -25,6 +35,8 @@
 
 \section{Excellence}
 
+Here's a citation to \cite{texbook}.
+
 \subsection{State of the art, knowledge needs and project objectives}
 
 \subsection{Research questions and hypotheses, theoretical approach and methodology}
@@ -44,6 +56,10 @@
 \subsection{Project manager and project group}
 
 \subsection{Project organisation and management}
+
+\nocite{*}
+
+\printbibliography
 
 \newpage
 
