@@ -1,4 +1,4 @@
-# LaTeX templates for ERC (CoG, 2024)
+# LaTeX templates for NFR
 
 This repository contains **_unofficial_** LaTeX templates for Norges Forskningsråd (NFR) applications. It consists of three files:
 
