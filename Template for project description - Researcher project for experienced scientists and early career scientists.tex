@@ -5,10 +5,10 @@
 % '\renewcommand{\bibfont}{\footnotesize}' to achieve this. Here's an example
 % using biblatex.
 
-\usepackage[style=numeric,sorting=ynt]{biblatex}
-
+\usepackage[sort&compress]{natbib}
+\citestyle{nature}
+\bibliographystyle{veryshortnum}
 \renewcommand{\bibfont}{\footnotesize}
-\addbibresource{refs.bib}
 
 \title{Project title}
 
@@ -35,7 +35,7 @@
 
 \section{Excellence}
 
-Here's a citation to \cite{texbook}.
+Here's a citation to \cite{texbook}. Here are citations to \cite{texbook,knuth:1984,lesk:1977}, and to \cite{lesk:1977,texbook,latex2e}.
 
 \subsection{State of the art, knowledge needs and project objectives}
 
@@ -59,7 +59,7 @@ Here's a citation to \cite{texbook}.
 
 \nocite{*}
 
-\printbibliography
+\bibliography{refs}
 
 \newpage
 
