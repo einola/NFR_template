@@ -4,9 +4,9 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `head,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,xedn,jabr,amper,nfss,,{}')
-%% geojour.mbs  (with options: `seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,xedn,jabr,amper,nfss,,{}')
-%% merlin.mbs  (with options: `tail,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,xedn,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `head,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% geojour.mbs  (with options: `seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `tail,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
 %% ----------------------------------------
 %% *** A short unsorted style ***
 %% 
@@ -280,6 +280,33 @@ FUNCTION {bbl.mthesis}
 FUNCTION {bbl.phdthesis}
 { "Ph.D. thesis" }
 
+FUNCTION {bbl.first}
+{ "1st" }
+
+FUNCTION {bbl.second}
+{ "2nd" }
+
+FUNCTION {bbl.third}
+{ "3rd" }
+
+FUNCTION {bbl.fourth}
+{ "4th" }
+
+FUNCTION {bbl.fifth}
+{ "5th" }
+
+FUNCTION {bbl.st}
+{ "st" }
+
+FUNCTION {bbl.nd}
+{ "nd" }
+
+FUNCTION {bbl.rd}
+{ "rd" }
+
+FUNCTION {bbl.th}
+{ "th" }
+
 MACRO {jan} {"Jan."}
 
 MACRO {feb} {"Feb."}
@@ -303,6 +330,27 @@ MACRO {oct} {"Oct."}
 MACRO {nov} {"Nov."}
 
 MACRO {dec} {"Dec."}
+
+FUNCTION {eng.ord}
+{ duplicate$ "1" swap$ *
+  #-2 #1 substring$ "1" =
+     { bbl.th * }
+     { duplicate$ #-1 #1 substring$
+       duplicate$ "1" =
+         { pop$ bbl.st * }
+         { duplicate$ "2" =
+             { pop$ bbl.nd * }
+             { "3" =
+                 { bbl.rd * }
+                 { bbl.th * }
+               if$
+             }
+           if$
+          }
+       if$
+     }
+   if$
+}
 
  %-------------------------------------------------------------------
  % Begin module:
@@ -722,10 +770,63 @@ FUNCTION {format.number.series}
     { "" }
   if$
 }
+FUNCTION {is.num}
+{ chr.to.int$
+  duplicate$ "0" chr.to.int$ < not
+  swap$ "9" chr.to.int$ > not and
+}
+
+FUNCTION {extract.num}
+{ duplicate$ 't :=
+  "" 's :=
+  { t empty$ not }
+  { t #1 #1 substring$
+    t #2 global.max$ substring$ 't :=
+    duplicate$ is.num
+      { s swap$ * 's := }
+      { pop$ "" 't := }
+    if$
+  }
+  while$
+  s empty$
+    'skip$
+    { pop$ s }
+  if$
+}
+
+FUNCTION {convert.edition}
+{ extract.num "l" change.case$ 's :=
+  s "first" = s "1" = or
+    { bbl.first 't := }
+    { s "second" = s "2" = or
+        { bbl.second 't := }
+        { s "third" = s "3" = or
+            { bbl.third 't := }
+            { s "fourth" = s "4" = or
+                { bbl.fourth 't := }
+                { s "fifth" = s "5" = or
+                    { bbl.fifth 't := }
+                    { s #1 #1 substring$ is.num
+                        { s eng.ord 't := }
+                        { edition 't := }
+                      if$
+                    }
+                  if$
+                }
+              if$
+            }
+          if$
+        }
+      if$
+    }
+  if$
+  t
+}
 
 FUNCTION {format.edition}
 { edition duplicate$ empty$ 'skip$
     {
+      convert.edition
       output.state mid.sentence =
         { "l" }
         { "t" }

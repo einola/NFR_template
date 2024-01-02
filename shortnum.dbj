@@ -584,9 +584,9 @@ End of customized bst file
 %>>MONTHS WITH DOTS:
 %>>ABBREVIATION FOR `EDITION' (if abbreviating words)
 %<<EDITION NUMBERS:
-  xedn,%: Editions as in database saving much processing memory
+% xedn,%: Editions as in database saving much processing memory
 %   %: (def) Write out editions as first, second, third, etc
-% ord,%: Numerical editions as 1st, 2nd, 3rd, etc
+  ord,%: Numerical editions as 1st, 2nd, 3rd, etc
 %------\ans=*(==xedn)-------
 %>>EDITION NUMBERS:
 %>>ABBREVIATE WORD `PAGES' (if not using external language file)
