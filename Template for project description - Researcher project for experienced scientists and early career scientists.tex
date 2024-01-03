@@ -6,13 +6,14 @@
 % using bibtex and natbib.
 
 \usepackage[sort&compress]{natbib}
-\citestyle{nature}
-\bibliographystyle{veryshortnum}
 \renewcommand{\bibfont}{\footnotesize}
 
 \usepackage{multicol}
 \renewcommand{\bibpreamble}{\begin{multicols*}{2}}
 \renewcommand{\bibpostamble}{\end{multicols*}}
+
+\citestyle{nature}
+\bibliographystyle{veryshortnum}
 
 
 \title{Project title}
@@ -40,7 +41,7 @@
 
 \section{Excellence}
 
-Here's a citation to \cite{texbook}. Here are citations to \cite{texbook,knuth:1984,lesk:1977}, and to \cite{lesk:1977,texbook,latex2e}.
+Here's a citation to \cite{texbook}. Here are citations to \cite{texbook,knuth:1984,lesk:1977}, and to \cite{lesk:1977,texbook,latex2e,latex:companion}.
 
 \subsection{State of the art, knowledge needs and project objectives}
 
@@ -61,8 +62,6 @@ Here's a citation to \cite{texbook}. Here are citations to \cite{texbook,knuth:1
 \subsection{Project manager and project group}
 
 \subsection{Project organisation and management}
-
-\nocite{*}
 
 \bibliography{refs}
 
