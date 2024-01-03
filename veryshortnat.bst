@@ -1,12 +1,12 @@
 %%
-%% This is file `shortnat.bst',
+%% This is file `veryshortnat.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `head,ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
-%% geojour.mbs  (with options: `ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
-%% merlin.mbs  (with options: `tail,ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `head,ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% geojour.mbs  (with options: `ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `tail,ay,nat,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,keyxyr,xmth,note-yr,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
 %% ----------------------------------------
 %% *** A short natbib style ***
 %% 
@@ -1074,7 +1074,6 @@ FUNCTION {article}
   author format.key output
   name.or.dash
   new.block
-  new.block
   crossref missing$
     {
       journal
@@ -1185,8 +1184,6 @@ FUNCTION {incollection}
   format.authors "author" output.check
   author format.key output
   name.or.dash
-  new.block
-  format.title "title" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -1670,4 +1667,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `shortnat.bst'.
+%% End of file `veryshortnat.bst'.

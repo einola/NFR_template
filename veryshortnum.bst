@@ -1,12 +1,12 @@
 %%
-%% This is file `shortnum.bst',
+%% This is file `veryshortnum.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `head,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
-%% geojour.mbs  (with options: `seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
-%% merlin.mbs  (with options: `tail,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `head,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% geojour.mbs  (with options: `seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
+%% merlin.mbs  (with options: `tail,seq-no,nm-init,ed-au,jnrlst,nmdash,nmlm,x2,m1,xmth,jtit-x,jxper,num-xser,doi,pp,ed,abr,ednx,mth-bare,ord,jabr,amper,nfss,,{}')
 %% ----------------------------------------
 %% *** A short unsorted style ***
 %% 
@@ -1041,7 +1041,6 @@ FUNCTION {article}
   format.authors "author" output.check
   name.or.dash
   new.block
-  new.block
   crossref missing$
     {
       journal
@@ -1148,8 +1147,6 @@ FUNCTION {incollection}
 { output.bibitem
   format.authors "author" output.check
   name.or.dash
-  new.block
-  format.title "title" output.check
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
@@ -1398,4 +1395,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `shortnum.bst'.
+%% End of file `veryshortnum.bst'.
