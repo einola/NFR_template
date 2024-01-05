@@ -6,6 +6,6 @@ The class file (nfr.cls) contains the `nfr` LaTeX class. This is used in the "Te
 
 In addition to general formatting, the class file also contains counters and commands for work packages (`\workpackage`) and tasks (`\task`), as well as reference commands (`\wpref` and `\tskref`). There are also counters and environments for objectives (`objective`), hypotheses (`hypothesis`), and research questions (`resq`). The environments have starred (`*`) alternatives which are not numbered. The number prefix can be changed by passing an alternative prefix to the environment.
 
-I have also included four bibliography styles to work with the natbib package. All four aim to reduce the length of the bibliography that's produced. The styles `shortnat` and `veryshortnat` are for author-year references, while `shortnum` and `veryshortnum` are for numbered references. See an example of how to produce Nature-like references in the "Template" file.
+I have also included four bibliography styles to work with the natbib package. All four aim to reduce the length of the bibliography that's produced. The styles `shortnat` and `veryshortnat` are for author-year references, while `shortnum` and `veryshortnum` are for numbered references. See an example of how to produce Nature-like references in the "Template" file. The directory `jabbrv_styles` contains these four style files but with support for the [jabbrv package](https://github.com/compholio/jabbrv).
 
 This template is based on my ERC LaTeX class, available [here](https://github.com/einola/ERC_template).
