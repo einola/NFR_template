@@ -9,9 +9,10 @@
 \RequirePackage[left=2cm,top=2cm,bottom=2cm,right=2cm]{geometry}
 
 \renewcommand{\maketitle}{
-   {\bfseries\huge
-   \vspace{.5cm}\@title\par
-   \vspace{.5cm}
+   {\centering\bfseries\LARGE
+   \vspace{.25cm}
+   \@title\par
+   \vspace{.25cm}
    }
 }
 
