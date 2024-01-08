@@ -98,4 +98,11 @@
 % Graphics
 \RequirePackage{graphicx}
 
+% Bibliography with natbib
+\RequirePackage[sort&compress]{natbib}
+% The bibliography can use a 9pt font, which equates to \footnotesize when the
+% main document font size is 11pts
+\renewcommand{\bibfont}{\footnotesize}
+
+
 \endinput

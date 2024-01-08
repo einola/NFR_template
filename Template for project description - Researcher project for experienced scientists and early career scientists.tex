@@ -1,18 +1,14 @@
 \documentclass{nfr}
 
-% The bibliography can use a 9pt font, which equates to \footnotesize. If you
-% use the biblatex or natbib packages you can do
-% '\renewcommand{\bibfont}{\footnotesize}' to achieve this. Here's an example
-% using bibtex and natbib.
-
-\usepackage[sort&compress]{natbib}
-\renewcommand{\bibfont}{\footnotesize}
+% Here's an example bibliography using the numeric (Nature) style and two
+% columns for the reference list.
 
 \usepackage{multicol}
 \renewcommand{\bibpreamble}{\begin{multicols*}{2}}
 \renewcommand{\bibpostamble}{\end{multicols*}}
 
 \citestyle{nature}
+
 \bibliographystyle{bst/veryshortnum}
 
 
