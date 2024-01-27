@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{nfr}[2023/12/18 NFR template class]
+\ProvidesClass{nfr}[2024/01/27 NFR template class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -43,9 +43,9 @@
 \AtBeginDocument{
     \hypersetup{
         pdftitle={\@title},%
-        %pdfauthor={\@author},%
+        pdfauthor={\@author},%
 	%pdfsubject={\@granttypeyear},%
-        addtopdfcreator={using nfr.cls from https://github.com/einola/NFR\_template}
+	addtopdfcreator={using \csname ver@nfr.cls\endcsname~(https://github.com/einola/NFR\_template)}
     }
 }
 
