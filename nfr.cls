@@ -44,8 +44,8 @@
     \hypersetup{
         pdftitle={\@title},%
         pdfauthor={\@author},%
-	%pdfsubject={\@granttypeyear},%
-	addtopdfcreator={using \csname ver@nfr.cls\endcsname~(https://github.com/einola/NFR\_template)}
+        %pdfsubject={\@granttypeyear},%
+        addtopdfcreator={using \csname ver@nfr.cls\endcsname~(https://github.com/einola/NFR\_template)}
     }
 }
 
