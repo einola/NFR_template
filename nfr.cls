@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{nfr}[2024/01/27 NFR template class]
+\ProvidesClass{nfr}[2024/01/28 NFR template class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -102,14 +102,10 @@
 \newcommand{\wpref}[1]{WP\ref{#1}}
 \newcommand{\tskref}[1]{T\ref{#1}}
 
-% Graphics
-\RequirePackage{graphicx}
-
 % Bibliography with natbib
 \RequirePackage[sort&compress]{natbib}
 % The bibliography can use a 9pt font, which equates to \footnotesize when the
 % main document font size is 11pts
 \renewcommand{\bibfont}{\footnotesize}
-
 
 \endinput
