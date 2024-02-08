@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{nfr}[2024/01/28 NFR template class]
+\ProvidesClass{nfr}[2024/02/08 NFR template class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -51,28 +51,37 @@
 
 % Environments and counters for WPs, tasks, objectives, hypotheses, and research questions
 % counters
+
+% Work packages
 \newcounter{wpCntr}
-\newcounter{taskCntr}[wpCntr]
-\counterwithin{taskCntr}{wpCntr}
-
-\newcounter{objCntr}
-\newcounter{hypCntr}
-\newcounter{resqCntr}
-
-% Environments
-
-% Work package
 \newcommand{\workpackage}[1]%
     {\refstepcounter{wpCntr}%
         \belowpdfbookmark{WP\thewpCntr:~#1}{WP\thewpCntr}%
         \subsubsection*{WP\thewpCntr:~#1}}
 
 % Tasks
+\newcounter{taskCntr}[wpCntr]
+\counterwithin{taskCntr}{wpCntr}
 \newcommand{\task}[1]%
     {\refstepcounter{taskCntr}%
     \paragraph{Task~\thetaskCntr:~#1}}
 
+% Deliverables
+\newcounter{delivCntr}[wpCntr]
+\counterwithin{delivCntr}{wpCntr}
+\newcommand{\deliverable}[1]
+    {\refstepcounter{delivCntr}%
+    \emph{Deliverable~\thedelivCntr: #1}}
+
+% Milestones
+\newcounter{mlstnCntr}[wpCntr]
+\counterwithin{mlstnCntr}{wpCntr}
+\newcommand{\milestone}[1]
+    {\refstepcounter{mlstnCntr}%
+    \emph{Milestone~\themlstnCntr: #1}}
+
 % Objectives (numbered and not)
+\newcounter{objCntr}
 \newenvironment{objective*}%
     {\begin{quote}\begin{bfseries}\begin{flushleft}}%
     {\end{flushleft}\end{bfseries}\end{quote}}
@@ -82,6 +91,7 @@
     {\end{objective*}}
 
 % Hypothesis (numbered and not)
+\newcounter{hypCntr}
 \newenvironment{hypothesis*}%
     {\begin{quote}\begin{bfseries}\begin{flushleft}}%
     {\end{flushleft}\end{bfseries}\end{quote}}
@@ -91,6 +101,7 @@
     {\end{hypothesis*}\ignorespacesafterend}
 
 % Research questions (numbered and not)
+\newcounter{resqCntr}
 \newenvironment{resq*}%
     {\begin{quote}\begin{bfseries}\begin{flushleft}}%
     {\end{flushleft}\end{bfseries}\end{quote}}
@@ -99,8 +110,11 @@
     {\refstepcounter{resqCntr}\begin{resq*}#1\theresqCntr:}%
     {\end{resq*}}
 
+% References
 \newcommand{\wpref}[1]{WP\ref{#1}}
 \newcommand{\tskref}[1]{T\ref{#1}}
+\newcommand{\dref}[1]{D\ref{#1}}
+\newcommand{\mref}[1]{M\ref{#1}}
 
 % Bibliography with natbib
 \RequirePackage[sort&compress]{natbib}
