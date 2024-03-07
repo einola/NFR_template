@@ -45,12 +45,12 @@
         ]{1}{16}
         \gantttitle{2024}{2}
         \gantttitlelist{2025,...,2027}{4}
-        \gantttitle{}{2}
+        \gantttitle{2028}{2}
         \drawgantt
         \ganttlink{task1.1}{task2.1}
         \ganttlink{milestone1.2}{task2.2}
     \end{ganttchart}
-    \caption{A chart using the default formatting.}
+    \caption{A Gant chart using the default formatting. Milestones are indicated with diamonds and deliverables with stars.}
 \end{figure}
 
 \begin{figure}
@@ -81,8 +81,8 @@
         bar label node/.append style={left=.1cm},
         bar/.append style={draw=none, fill=pastelblue},
         % Shrink the deliverable and milestone symbols
-        deliverable/.append style={xscale=0.75, yscale=0.75},
-        milestone/.append style={xscale=0.75, yscale=0.75},
+        deliverable/.append style={xscale=0.5, yscale=0.5},
+        milestone/.append style={xscale=0.5, yscale=0.5},
         % Custom link style
         link/.style={-latex, line width=1.5pt},
         link/.append style={rounded corners=3pt},
@@ -90,11 +90,12 @@
         ]{1}{16}
         \gantttitle{2024}{2}
         \gantttitlelist{2025,...,2027}{4}
+        \gantttitle{2028}{2}
         \drawgantt
         \ganttlink{task1.1}{task2.1}
         \ganttlink{milestone1.2}{task2.2}
     \end{ganttchart}
-    \caption{A chart using some fancy formatting.}
+    \caption{A Gant chart using some fancy formatting. Milestones are indicated with diamonds and deliverables with stars.}
 \end{figure}
 
 
