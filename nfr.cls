@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{nfr}[2024/03/06 NFR template class]
+\ProvidesClass{nfr}[2024/03/11 NFR template class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
