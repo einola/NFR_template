@@ -106,15 +106,57 @@
 
 \newcommand*{\deliverable}{\@ifstar{\@delivstar}{\@delivnostar}}
 
-% Define a new Gantt chart element for deliverables using a star
-\newganttchartelement*{deliverable}{
-    deliverable/.style={
-        shape=star,
-        draw,
-        fill=black
-    },
-    deliverable left shift=1.0,
-    deliverable right shift=-1.0,
+% Define a new Gantt chart element for deliverables using a star and some anchors from ganttmilestone
+\pgfdeclareshape{ganttdeliverable}{
+    \inheritsavedanchors[from=star]
+    \inheritanchor[from=star]{text}
+    \inheritanchor[from=star]{center}
+    \inheritanchor[from=star]{mid}
+    \inheritanchor[from=star]{base}
+    \inheritanchor[from=star]{north}
+    \inheritanchor[from=star]{south}
+    \inheritanchor[from=star]{west}
+    \inheritanchor[from=star]{north west}
+    \inheritanchor[from=star]{south west}
+    \inheritanchor[from=star]{east}
+    \inheritanchor[from=star]{north east}
+    \inheritanchor[from=star]{south east}
+    \inheritanchorborder[from=star]
+    \inheritbackgroundpath[from=star]
+    \inheritanchor[from=ganttmilestone]{on top}
+    \inheritanchor[from=ganttmilestone]{on bottom}
+    \inheritanchor[from=ganttmilestone]{on right}
+    \inheritanchor[from=ganttmilestone]{on left}
+    }
+
+% The ganttdeliverable chart element is defined exactly the same way as ganttmilestone, except for
+    % shape=ganttdeliverable - for a different shape(!)
+    % inner sep=4pt    - see below in the milestone section
+    % left shift=1.0   - see below in the milestone section
+    % right shift=-1.0 - see below in the milestone section
+\newganttchartelement*{deliverable}{%
+    deliverable/.style={%
+        shape=ganttdeliverable, inner sep=4pt, draw, fill=black%
+    },%
+    deliverable incomplete/.style={/pgfgantt/deliverable, fill=black!25},%
+    deliverable label text=\strut#1,%
+    deliverable label font=\itshape,%
+    deliverable label node/.style={%
+        anchor=east, font=\ganttvalueof{deliverable label font}%
+    },%
+    deliverable inline label anchor=center,%
+    deliverable inline label node/.style={%
+        anchor=south, font=\ganttvalueof{deliverable label font}%
+    },%
+    deliverable progress label anchor=center,%
+    deliverable progress label font=\scriptsize,%
+    deliverable progress label node/.style={%
+        anchor=west, font=\ganttvalueof{deliverable progress label font}%
+    },%
+    deliverable left shift=1.0,%
+    deliverable right shift=-1.0,%
+    deliverable top shift=.3,%
+    deliverable height=.4%
 }
 
 % Milestones - Use \milestone* to not include it in the Gantt chart
@@ -135,7 +177,7 @@
 \ganttset{
     milestone left shift=1,
     milestone right shift=-1,
-    milestone/.style={shape=diamond, fill=black, inner sep=4pt}
+    milestone/.style={shape=ganttmilestone, fill=black, inner sep=4pt}
     }
 
 % Draw up the Gantt chart by looping over \ganttlist and calling \ganttgrou, \ganttbar, \ganttdeliverable, or \ganttmilestone, depending on where the information comes from. To be called within a suitably formatted ganttchart environment.
