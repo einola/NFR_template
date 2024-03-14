@@ -180,9 +180,9 @@
     milestone/.style={shape=ganttmilestone, fill=black, inner sep=4pt}
     }
 
-% Draw up the Gantt chart by looping over \ganttlist and calling \ganttgrou, \ganttbar, \ganttdeliverable, or \ganttmilestone, depending on where the information comes from. To be called within a suitably formatted ganttchart environment.
-\newcommand*{\drawgantt}{
-    \foreach \rank\cntr\startdate\enddate in \ganttlist {
+% Draw up the Gantt chart by looping over \ganttlist and calling \ganttgroup, \ganttbar, \ganttdeliverable, or \ganttmilestone, depending on where the information comes from. To be called within a suitably formatted ganttchart environment.
+\NewDocumentCommand\drawgantt{s}{
+    \foreach \rank / \cntr / \name / \startdate / \enddate in \ganttlist {
         \ifnum \rank = 1
             \ganttnewline
             \ganttgroup[name=\name]{WP\cntr}{\startdate}{\enddate}
@@ -192,10 +192,20 @@
             \ganttbar[name=\name]{Task \cntr}{\startdate}{\enddate}
         \fi
         \ifnum \rank = 3
-            \ganttdeliverable[name=\name]{}{\startdate}
+            \IfBooleanTF#1{
+                \ganttdeliverable[name=\name]{}{\startdate}
+            }{
+                \ganttnewline
+                \ganttdeliverable[name=\name]{Deliverable \cntr}{\startdate}
+            }
         \fi
         \ifnum \rank = 4
-            \ganttmilestone[name=\name]{}{\startdate}
+            \IfBooleanTF#1{
+                \ganttmilestone[name=\name]{}{\startdate}
+            }{
+                \ganttnewline
+                \ganttmilestone[name=\name]{Milestone \cntr}{\startdate}
+            }
         \fi
     }
 }
