@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{nfr}[2024/03/11 NFR template class]
+\ProvidesClass{nfr}[2024/03/14 NFR template class]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -74,7 +74,7 @@
 
 \newcommand*{\@wpnostar}[2]%
     {\@wpstar{#1}%
-    \appendlist{\ganttlist}{1/\thewpCntr/#2}}
+    \appendlist{\ganttlist}{1/\thewpCntr/wp\arabic{wpCntr}/#2}}
 
 \newcommand*{\workpackage}{\@ifstar{\@wpstar}{\@wpnostar}}
 
@@ -88,7 +88,7 @@
 
 \newcommand*{\@tasknostar}[2]%
     {\@taskstar{#1}%
-    \appendlist{\ganttlist}{2/\thetaskCntr/#2}}
+    \appendlist{\ganttlist}{2/\thetaskCntr/task\arabic{wpCntr}p\arabic{taskCntr}/#2}}
 
 \newcommand*{\task}{\@ifstar{\@taskstar}{\@tasknostar}}
 
@@ -102,7 +102,7 @@
 
 \newcommand*{\@delivnostar}[2]%
     {\@delivstar{#1}%
-    \appendlist{\ganttlist}{3/\thedelivCntr/#2}}
+    \appendlist{\ganttlist}{3/\thedelivCntr/deliverable\arabic{wpCntr}p\arabic{delivCntr}/#2}}
 
 \newcommand*{\deliverable}{\@ifstar{\@delivstar}{\@delivnostar}}
 
@@ -169,7 +169,7 @@
 
 \newcommand*{\@mlstnnostar}[2]%
     {\@mlstnstar{#1}%
-    \appendlist{\ganttlist}{4/\themlstnCntr/#2}}
+    \appendlist{\ganttlist}{4/\themlstnCntr/milestone\arabic{wpCntr}p\arabic{mlstnCntr}/#2}}
 
 \newcommand*{\milestone}{\@ifstar{\@mlstnstar}{\@mlstnnostar}}
 
@@ -185,17 +185,17 @@
     \foreach \rank\cntr\startdate\enddate in \ganttlist {
         \ifnum \rank = 1
             \ganttnewline
-	    \ganttgroup[name=wp\cntr]{WP\cntr}{\startdate}{\enddate}
+            \ganttgroup[name=\name]{WP\cntr}{\startdate}{\enddate}
         \fi
         \ifnum \rank = 2
             \ganttnewline
-	    \ganttbar[name=task\cntr]{Task \cntr}{\startdate}{\enddate}
+            \ganttbar[name=\name]{Task \cntr}{\startdate}{\enddate}
         \fi
         \ifnum \rank = 3
-	    \ganttdeliverable[name=deliverable\cntr]{}{\startdate}
+            \ganttdeliverable[name=\name]{}{\startdate}
         \fi
         \ifnum \rank = 4
-	    \ganttmilestone[name=milestone\cntr]{}{\startdate}
+            \ganttmilestone[name=\name]{}{\startdate}
         \fi
     }
 }
