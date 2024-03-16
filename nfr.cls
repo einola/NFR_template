@@ -181,7 +181,7 @@
     }
 
 % Draw up the Gantt chart by looping over \ganttlist and calling \ganttgroup, \ganttbar, \ganttdeliverable, or \ganttmilestone, depending on where the information comes from. To be called within a suitably formatted ganttchart environment.
-\NewDocumentCommand\drawgantt{s}{
+\newcommand*{\@drawgantt}[1]{
     \foreach \rank / \cntr / \name / \startdate / \enddate in \ganttlist {
         \ifnum \rank = 1
             \ganttnewline
@@ -192,23 +192,26 @@
             \ganttbar[name=\name]{Task \cntr}{\startdate}{\enddate}
         \fi
         \ifnum \rank = 3
-            \IfBooleanTF#1{
+            \ifnum #1 = 0
                 \ganttdeliverable[name=\name]{}{\startdate}
-            }{
+            \else
                 \ganttnewline
                 \ganttdeliverable[name=\name]{Deliverable \cntr}{\startdate}
-            }
+            \fi
         \fi
         \ifnum \rank = 4
-            \IfBooleanTF#1{
+            \ifnum #1 = 0
                 \ganttmilestone[name=\name]{}{\startdate}
-            }{
+            \else
                 \ganttnewline
                 \ganttmilestone[name=\name]{Milestone \cntr}{\startdate}
-            }
+            \fi
         \fi
     }
 }
+
+% \drawgantt* putts the milestone and deliverable triangle and star on top of the task bar, not in it's own line, like \dragantt does.
+\newcommand*{\drawgantt}{\@ifstar{\@drawgantt{0}}{\@drawgantt{1}}}
 
 % Objectives (numbered and not)
 \newcounter{objCntr}
