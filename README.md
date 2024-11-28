@@ -10,4 +10,4 @@ There are also counters and environments for objectives (`objective`), hypothese
 
 I have also included four bibliography styles to work with the natbib package in the `bst` directory. All four aim to reduce the length of the bibliography that's produced. The styles `shortnat` and `veryshortnat` are for author-year references, while `shortnum` and `veryshortnum` are for numbered references. See an example of how to produce Nature-like references in the "Template" file. The directory also contains versions of these styles with support for the [jabbrv package](https://github.com/compholio/jabbrv). They are prefixed with `jabbrv_`.
 
-This template is based on my ERC LaTeX class, available [here](https://github.com/einola/ERC_template).
+This template is maintained on github at [https://github.com/einola/NFR_template](https://github.com/einola/NFR_template). Feel free to fork it and make suggestions via pull requests to the original repository.
