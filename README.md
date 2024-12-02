@@ -1,6 +1,6 @@
 # LaTeX templates for NFR
 
-This repository contains **_unofficial_** LaTeX templates for Norges Forskningsråd (NFR) applications. It consists of a class file and four bibliography styles.
+This repository contains **_unofficial_** LaTeX templates for [Norges Forskningsråd](https://www.forskningsradet.no/) applications. This LaTeX template is based on the official Word template found [here](https://www.forskningsradet.no/siteassets/utlysninger/vedlegg-utlysninger/template-for-project-description-researcher-project-for-experienced-scientists-and-early-career-scientists.docx). It consists of a class file and four bibliography styles.
 
 The class file (nfr.cls) contains the `nfr` LaTeX class. This is used in the "Template" file, which is a reproduction of the official NFR templates. The "Template" file is a conversion of the official file "Template for project description - Researcher project for experienced scientists and early career scientists.docx", converted to LaTeX by pandoc. I modified the "Template" file to use the nfr document class so that section A of that document is the actual structure, using the \section and \subsection commands, and the other sections are treated as an appendix.
 
