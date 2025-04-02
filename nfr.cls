@@ -1,24 +1,63 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{nfr}[2024/03/14 NFR template class]
 
+% Class options to write CV or Project Description
+\newif\ifnfr@CV
+\newif\ifnfr@PD
+
+% Class options for manager or partner
+\newif\ifnfr@MGR
+\newif\ifnfr@PRTNR
+
+\DeclareOption{cv}{\nfr@CVtrue\nfr@PDfalse}
+\DeclareOption{pd}{\nfr@PDtrue\nfr@CVfalse}
+\DeclareOption{manager}{\nfr@MGRtrue\nfr@PRTNRfalse}
+\DeclareOption{partner}{\nfr@PRTNRtrue\nfr@MGRfalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+
+% Defaults to project description and manager
+\ExecuteOptions{pd}
+\ExecuteOptions{manager}
 \ProcessOptions\relax
 
 % Page setup
 \LoadClass[11pt,a4paper]{article}
 \RequirePackage[left=2cm,top=2cm,bottom=2cm,right=2cm]{geometry}
+\RequirePackage{amssymb,longtable}
 
-\renewcommand{\maketitle}{
-   {\centering\bfseries\LARGE
-   \vspace{.25cm}
-   \@title\par
-   \vspace{.25cm}
-   }
-}
+% Different title for PD or CV
+\ifnfr@PD
+    \renewcommand{\maketitle}{
+       {\centering\bfseries\LARGE
+       \vspace{.25cm}
+       \@title\par
+       \vspace{.25cm}
+       }
+    }
+\fi
+
+\ifnfr@CV
+    \renewcommand{\maketitle}{
+       {\bfseries\LARGE
+       \vspace{.25cm}
+       \noindent Curriculum vitae with track record\par
+       \vspace{.25cm}
+       }
+       \paragraph{Role in the project}
+       \ifnfr@MGR
+           Project manager $\boxtimes$ \qquad Project partner $\Box$
+       \fi
+       \ifnfr@PRTNR
+           Project manager $\Box$ \qquad Project partner $\boxtimes$
+       \fi
+    }
+    \renewcommand{\arraystretch}{1.75}
+\fi
 
 % Footer
 \RequirePackage{fancyhdr}
 \RequirePackage[table]{xcolor}
+\definecolor{tablegray}{gray}{0.96}
 
 \fancyhf{} % clear all header and footer fields
 
@@ -253,6 +292,8 @@
 \RequirePackage[sort&compress]{natbib}
 % The bibliography can use a 9pt font, which equates to \footnotesize when the
 % main document font size is 11pts
-\renewcommand{\bibfont}{\footnotesize}
+\ifnfr@PD
+    \renewcommand{\bibfont}{\footnotesize}
+\fi
 
 \endinput

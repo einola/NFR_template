@@ -2,7 +2,9 @@
 
 This repository contains **_unofficial_** LaTeX templates for Norges Forskningsråd (NFR) applications. It consists of a class file and four bibliography styles.
 
-The class file (nfr.cls) contains the `nfr` LaTeX class. This is used in the "Template" file, which is a reproduction of the official NFR templates. The "Template" file is a conversion of the official file "Template for project description - Researcher project for experienced scientists and early career scientists.docx", converted to LaTeX by pandoc. I modified the "Template" file to use the nfr document class so that section A of that document is the actual structure, using the \section and \subsection commands, and the other sections are treated as an appendix.
+The class file (nfr.cls) contains the `nfr` LaTeX class. This is used in the "Template" file, which is a reproduction of the official NFR template. The "Template" file is a conversion of the official file "Template for project description - Researcher project for experienced scientists and early career scientists.docx", converted to LaTeX by pandoc. I modified the "Template" file to use the nfr document class so that section A of that document is the actual structure, using the \section and \subsection commands, and the other sections are treated as an appendix.
+
+There is also a template for creating a CV, based on the NFR CV template for researchers. I haven't done the early career one yet. This uses the `nfr` LaTeX class with the "cv" option and either the "manager" (default) or "partner" option to indicate if the manager or partner check box should be checked.
 
 In addition to general formatting, the class file also contains counters and commands for work packages (`\workpackage`), tasks (`\task`), deliverables (`\deliverable`), and milestones (`\milestone`), as well as reference commands (`\wpref`, `\tskref`, `\dref`, and `\mref`). These commands can collect duration information for automatic Gantt chart generation. See the file `Gantt_chart_example.tex` for a working example.
 
