@@ -57,7 +57,7 @@
 % Footer
 \RequirePackage{fancyhdr}
 \RequirePackage[table]{xcolor}
-\definecolor{tablegray}{gray}{0.96}
+\definecolor{nfrgray}{gray}{0.96}
 
 \fancyhf{} % clear all header and footer fields
 

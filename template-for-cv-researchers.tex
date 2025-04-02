@@ -20,22 +20,23 @@
 \maketitle
 
 \paragraph{Personal information}
+
+% This table is anoying because of the "extra" columns around Sex. Here I use multicolumn for everything else, because the pdf looks better than a nested table (although the LaTeX code for that looks better).
 \begin{longtable}{
 | >{\raggedright}p{5.5cm} % 
-    | >{\raggedright\arraybackslash}p{10.6cm} | }
+    | >{\raggedright\arraybackslash}p{7cm} %
+    | >{\raggedright\arraybackslash}p{1.0cm} %
+    | >{\raggedright\arraybackslash}p{1.7cm} | }
     \hline
-    \cellcolor{tablegray} First name, Surname: & ~ \\
+    \cellcolor{nfrgray} First name, Surname: & \multicolumn{3}{l|}{ ~ } \\
     \hline
-    \cellcolor{tablegray} Date of birth: & 
-    \begin{tabular}{@{}>{\raggedright}p{7cm}|c|c}
-        DD.MM.YYYY & \cellcolor{tablegray} Sex: & ~
-    \end{tabular}\\
+    \cellcolor{nfrgray} Date of birth: & DD.MM.YYYY & \cellcolor{nfrgray} Sex: & ~ \\
     \hline
-    \cellcolor{tablegray} Nationality: & ~ \\
+    \cellcolor{nfrgray} Nationality: & \multicolumn{3}{l|}{ ~ } \\
     \hline
-    \cellcolor{tablegray} Researcher unique identifier (ORCID): & 0000-1234-5678-9007 \\
+    \cellcolor{nfrgray} Researcher unique identifier(s) (ORCID, ResearcherID, etc.): & \multicolumn{3}{l|}{ ~ } \\
     \hline
-    \cellcolor{tablegray} URL for personal website: & \url{http://127.0.0.1} \\
+    \cellcolor{nfrgray} URL for personal website: & \multicolumn{3}{l|}{ ~ } \\
     \hline
 \end{longtable}
 
@@ -44,7 +45,7 @@
 | >{\raggedright}p{2.45cm} % 
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
-    \rowcolor{tablegray} Year & Faculty/department - University/institution - Country \\
+    \rowcolor{nfrgray} Year & Faculty/department - University/institution - Country \\
     \hline
     Yyyy (dissertationdefended) & Ph.D. \\
     \hline
@@ -61,7 +62,7 @@ sector/other)}
 | >{\raggedright}p{2.45cm} % 
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
-    \rowcolor{tablegray} Year & Job title - Employer - Country \\
+    \rowcolor{nfrgray} Year & Job title - Employer - Country \\
     \hline
     yyyy-- & ~ \\
     \hline
@@ -74,7 +75,7 @@ sector/other)}
 | >{\raggedright}p{2.45cm} % 
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
-    \rowcolor{tablegray} Year & Reason \\
+    \rowcolor{nfrgray} Year & Reason \\
     \hline
     yyyy--yyyy & ~ \\
     \hline
@@ -87,7 +88,7 @@ sector/other)}
 | >{\raggedright}p{2.45cm} % 
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
-    \rowcolor{tablegray} Year & Project owner - Project - Role - Funder \\
+    \rowcolor{nfrgray} Year & Project owner - Project - Role - Funder \\
     \hline
     yyyy & ~ \\
     \hline
@@ -102,7 +103,7 @@ sector/other)}
     | >{\raggedright}p{2cm} % 
     | >{\raggedright\arraybackslash}p{12.1cm} | }
     \hline
-    \rowcolor{tablegray} Master's students & PhD students & University/institution - Country \\
+    \rowcolor{nfrgray} Master's students & PhD students & University/institution - Country \\
     \hline
     ~ & ~ & ~ \\
     \hline
@@ -116,7 +117,7 @@ sector/other)}
 | >{\raggedright}p{2.45cm} % 
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
-    \rowcolor{tablegray} Year & Description - Role \\
+    \rowcolor{nfrgray} Year & Description - Role \\
     \hline
     yyyy & ~ \\
     \hline
