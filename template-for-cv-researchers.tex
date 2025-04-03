@@ -22,21 +22,22 @@
 \paragraph{Personal information}
 
 % This table is anoying because of the "extra" columns around Sex. Here I use multicolumn for everything else, because the pdf looks better than a nested table (although the LaTeX code for that looks better).
+\newcommand{\mcl}[1]{\multicolumn{3}{l|}{#1}}
 \begin{longtable}{
 | >{\raggedright}p{5.5cm} % 
     | >{\raggedright\arraybackslash}p{7cm} %
     | >{\raggedright\arraybackslash}p{1.0cm} %
     | >{\raggedright\arraybackslash}p{1.7cm} | }
     \hline
-    \cellcolor{nfrgray} First name, Surname: & \multicolumn{3}{l|}{ ~ } \\
+    \cellcolor{nfrgray} First name, Surname: & \mcl{ ~ } \\
     \hline
     \cellcolor{nfrgray} Date of birth: & DD.MM.YYYY & \cellcolor{nfrgray} Sex: & ~ \\
     \hline
-    \cellcolor{nfrgray} Nationality: & \multicolumn{3}{l|}{ ~ } \\
+    \cellcolor{nfrgray} Nationality: & \mcl{ ~ } \\
     \hline
-    \cellcolor{nfrgray} Researcher unique identifier(s) (ORCID, ResearcherID, etc.): & \multicolumn{3}{l|}{ ~ } \\
+    \cellcolor{nfrgray} Researcher unique identifier(s) (ORCID, ResearcherID, etc.): & \mcl{ ~ } \\
     \hline
-    \cellcolor{nfrgray} URL for personal website: & \multicolumn{3}{l|}{ ~ } \\
+    \cellcolor{nfrgray} URL for personal website: & \mcl{ ~ } \\
     \hline
 \end{longtable}
 
