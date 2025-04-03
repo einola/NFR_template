@@ -24,26 +24,26 @@
 % This table is anoying because of the "extra" columns around Sex. Here I use multicolumn for everything else, because the pdf looks better than a nested table (although the LaTeX code for that looks better).
 \newcommand{\mcl}[1]{\multicolumn{3}{l|}{#1}}
 \begin{longtable}{
-| >{\raggedright}p{5.5cm} % 
-    | >{\raggedright\arraybackslash}p{7cm} %
-    | >{\raggedright\arraybackslash}p{1.0cm} %
+| >{\columncolor{nfrgray}\raggedright}p{5.5cm} %
+    | >{\raggedright}p{7cm} %
+    | >{\raggedright}p{1.0cm} %
     | >{\raggedright\arraybackslash}p{1.7cm} | }
     \hline
-    \cellcolor{nfrgray} First name, Surname: & \mcl{ ~ } \\
+    First name, Surname: & \mcl{ ~ } \\
     \hline
-    \cellcolor{nfrgray} Date of birth: & DD.MM.YYYY & \cellcolor{nfrgray} Sex: & ~ \\
+    Date of birth: & DD.MM.YYYY & \cellcolor{nfrgray} Sex: & ~ \\
     \hline
-    \cellcolor{nfrgray} Nationality: & \mcl{ ~ } \\
+    Nationality: & \mcl{ ~ } \\
     \hline
-    \cellcolor{nfrgray} Researcher unique identifier(s) (ORCID, ResearcherID, etc.): & \mcl{ ~ } \\
+    Researcher unique identifier(s) (ORCID, ResearcherID, etc.): & \mcl{ ~ } \\
     \hline
-    \cellcolor{nfrgray} URL for personal website: & \mcl{ ~ } \\
+    URL for personal website: & \mcl{ ~ } \\
     \hline
 \end{longtable}
 
 \paragraph{Education}
 \begin{longtable}{
-| >{\raggedright}p{2.45cm} % 
+| >{\raggedright}p{2.45cm} %
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
     \rowcolor{nfrgray} Year & Faculty/department - University/institution - Country \\
@@ -60,7 +60,7 @@
 sector/other)}
 
 \begin{longtable}{
-| >{\raggedright}p{2.45cm} % 
+| >{\raggedright}p{2.45cm} %
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
     \rowcolor{nfrgray} Year & Job title - Employer - Country \\
@@ -73,7 +73,7 @@ sector/other)}
 
 \paragraph{Career breaks}
 \begin{longtable}{
-| >{\raggedright}p{2.45cm} % 
+| >{\raggedright}p{2.45cm} %
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
     \rowcolor{nfrgray} Year & Reason \\
@@ -86,7 +86,7 @@ sector/other)}
 
 \noindent\textit{(Academic sector/research institutes/industrial sector/public sector/other. Please list the most relevant.)}
 \begin{longtable}{
-| >{\raggedright}p{2.45cm} % 
+| >{\raggedright}p{2.45cm} %
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
     \rowcolor{nfrgray} Year & Project owner - Project - Role - Funder \\
@@ -100,9 +100,9 @@ sector/other)}
 \noindent\textit{(Total number of students)}
 
 \begin{longtable}{
-| >{\raggedright}p{2cm} % 
-    | >{\raggedright}p{2cm} % 
-    | >{\raggedright\arraybackslash}p{12.1cm} | }
+| >{\raggedright}p{2cm} %
+    | >{\raggedright}p{2cm} %
+    | >{\raggedright\arraybackslash}p{11.6cm} | }
     \hline
     \rowcolor{nfrgray} Master's students & PhD students & University/institution - Country \\
     \hline
@@ -115,7 +115,7 @@ sector/other)}
 \noindent\textit{(E.g. institutional responsibilities, organisation of scientific meetings, membership in academic societies, review boards, advisory boards, committees, major research or innovation collaborations, other commissions of trust in public or private sector).}
 
 \begin{longtable}{
-| >{\raggedright}p{2.45cm} % 
+| >{\raggedright}p{2.45cm} %
     | >{\raggedright\arraybackslash}p{13.65cm} | }
     \hline
     \rowcolor{nfrgray} Year & Description - Role \\
