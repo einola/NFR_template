@@ -10,7 +10,7 @@
 %
 % Please note:
 % - CV should be maximum 4 pages. It is not possible to upload a CV that
-%   exceeds this limitation. 
+%   exceeds this limitation.
 % - Keep the page format of this template (A4, 2 cm margins, single spacing, font
 %   11, Calibri, or in this case Computer Modern).
 % Delete any non-applicable sections, before submitting the CV.
@@ -41,10 +41,12 @@
     \hline
 \end{longtable}
 
+% We now have a lot of table with identical column setups, 2.45 cm wide, gray (for year), followed by a 13.56 cm wide, white column. Use \newcolumntype to make this more transparent.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}p{2.45cm}}
+\newcolumntype{F}{>{\raggedright\arraybackslash}p{13.66cm}}
+
 \paragraph{Education}
-\begin{longtable}{
-| >{\raggedright}p{2.45cm} %
-    | >{\raggedright\arraybackslash}p{13.65cm} | }
+\begin{longtable}{|Y|F|}
     \hline
     \rowcolor{nfrgray} Year & Faculty/department - University/institution - Country \\
     \hline
@@ -59,9 +61,7 @@
 \noindent\textit{(Academic sector/research institutes/industrial sector/public
 sector/other)}
 
-\begin{longtable}{
-| >{\raggedright}p{2.45cm} %
-    | >{\raggedright\arraybackslash}p{13.65cm} | }
+\begin{longtable}{|Y|F|}
     \hline
     \rowcolor{nfrgray} Year & Job title - Employer - Country \\
     \hline
@@ -72,9 +72,7 @@ sector/other)}
 \end{longtable}
 
 \paragraph{Career breaks}
-\begin{longtable}{
-| >{\raggedright}p{2.45cm} %
-    | >{\raggedright\arraybackslash}p{13.65cm} | }
+\begin{longtable}{|Y|F|}
     \hline
     \rowcolor{nfrgray} Year & Reason \\
     \hline
@@ -85,9 +83,7 @@ sector/other)}
 \paragraph{Project management experience} ~
 
 \noindent\textit{(Academic sector/research institutes/industrial sector/public sector/other. Please list the most relevant.)}
-\begin{longtable}{
-| >{\raggedright}p{2.45cm} %
-    | >{\raggedright\arraybackslash}p{13.65cm} | }
+\begin{longtable}{|Y|F|}
     \hline
     \rowcolor{nfrgray} Year & Project owner - Project - Role - Funder \\
     \hline
@@ -114,9 +110,7 @@ sector/other)}
 
 \noindent\textit{(E.g. institutional responsibilities, organisation of scientific meetings, membership in academic societies, review boards, advisory boards, committees, major research or innovation collaborations, other commissions of trust in public or private sector).}
 
-\begin{longtable}{
-| >{\raggedright}p{2.45cm} %
-    | >{\raggedright\arraybackslash}p{13.65cm} | }
+\begin{longtable}{|Y|F|}
     \hline
     \rowcolor{nfrgray} Year & Description - Role \\
     \hline
