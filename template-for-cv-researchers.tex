@@ -24,10 +24,10 @@
 % This table is anoying because of the "extra" columns around Sex. Here I use multicolumn for everything else, because the pdf looks better than a nested table (although the LaTeX code for that looks better).
 \newcommand{\mcl}[1]{\multicolumn{3}{l|}{#1}}
 \begin{longtable}{
-| >{\columncolor{nfrgray}\raggedright}p{5.5cm} %
-    | >{\raggedright}p{7cm} %
+| >{\columncolor{nfrgray}\raggedright}p{5.1cm} %
+    | >{\raggedright}p{6.6cm} %
     | >{\raggedright}p{1.0cm} %
-    | >{\raggedright\arraybackslash}p{1.7cm} | }
+    | >{\raggedright\arraybackslash}p{2.54cm} | }
     \hline
     First name, Surname: & \mcl{ ~ } \\
     \hline
@@ -41,9 +41,9 @@
     \hline
 \end{longtable}
 
-% We now have a lot of table with identical column setups, 2.45 cm wide, gray (for year), followed by a 13.56 cm wide, white column. Use \newcolumntype to make this more transparent.
-\newcolumntype{Y}{>{\raggedright\arraybackslash}p{2.45cm}}
-\newcolumntype{F}{>{\raggedright\arraybackslash}p{13.66cm}}
+% We now have a lot of table with identical column setups, 1.8 cm wide, grey (for year), followed by a 14.31 cm wide, white column. Use \newcolumntype to make this more transparent.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}p{1.8cm}}
+\newcolumntype{F}{>{\raggedright\arraybackslash}p{14.31cm}}
 
 \paragraph{Education}
 \begin{longtable}{|Y|F|}
@@ -96,9 +96,9 @@ sector/other)}
 \noindent\textit{(Total number of students)}
 
 \begin{longtable}{
-| >{\raggedright}p{2cm} %
-    | >{\raggedright}p{2cm} %
-    | >{\raggedright\arraybackslash}p{11.6cm} | }
+| >{\raggedright}p{1.5cm} %
+    | >{\raggedright}p{1.5cm} %
+    | >{\raggedright\arraybackslash}p{12.68cm} | }
     \hline
     \rowcolor{nfrgray} Master's students & PhD students & University/institution - Country \\
     \hline
