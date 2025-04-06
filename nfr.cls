@@ -51,7 +51,7 @@
            Project manager $\Box$ \qquad Project partner $\boxtimes$
        \fi
     }
-    \renewcommand{\arraystretch}{1.75}
+    \renewcommand{\arraystretch}{1.56}
 \fi
 
 % Footer
